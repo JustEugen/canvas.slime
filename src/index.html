@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=480, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,target-densitydpi=device-dpi, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Webpack 4 TypeScript boilerplate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
+    />
+    <style>
+      body {
+          overflow: hidden;
+      }
+
+      #controls {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+      }
+
+      #controls > *:not(:last-child) {
+          margin-bottom: 15px;
+      }
+
+      .control-wrapper {
+          display: flex;
+          align-items: center;
+          font-family: Calibri;
+          font-size: 16px;
+          color: #fff;
+      }
+
+      .control-wrapper > *:first-child {
+          flex-shrink: 0;
+          width: 60px;
+      }
+
+      .control-wrapper > input {
+          margin-left: 15px;
+      }
+    </style>
+  </head>
+  <body style="width: 100vw; height: 100vh;">
+    <div id="controls">
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  </body>
+</html>
